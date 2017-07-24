@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TziporahStore" Class="LinqToSqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SBT-PC1\SQLEXPRESS;Initial Catalog=TziporahStore;Integrated Security=True" SettingsObjectName="ConsoleApplicationDBClasses.Properties.Settings" SettingsPropertyName="TziporahStoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="balance" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Customer_Account" Member="Customer" ThisKey="userID" OtherKey="userID" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="creditCard" Type="System.Decimal" DbType="Decimal(16,0) NOT NULL" CanBeNull="false" />
+      <Column Name="houseNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="street" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="usState" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="zip" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="aPassword" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Customer_Account" Member="Accounts" ThisKey="userID" OtherKey="userID" Type="Account" />
+      <Association Name="Customer_Purchase" Member="Purchases" ThisKey="userID" OtherKey="custID" Type="Purchase" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="itemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Column Name="descript" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="Item_Purchase" Member="Purchases" ThisKey="itemID" OtherKey="itemNo" Type="Purchase" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Purchase" Member="Purchases">
+    <Type Name="Purchase">
+      <Column Name="purchaseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="custID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="itemNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="purchaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Customer_Purchase" Member="Customer" ThisKey="custID" OtherKey="userID" Type="Customer" IsForeignKey="true" />
+      <Association Name="Item_Purchase" Member="Item" ThisKey="itemNo" OtherKey="itemID" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

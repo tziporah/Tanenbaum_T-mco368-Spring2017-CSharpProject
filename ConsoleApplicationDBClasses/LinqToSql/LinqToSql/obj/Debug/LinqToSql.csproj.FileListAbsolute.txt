@@ -1,0 +1,1 @@
+C:\Users\Sara Bracha\Documents\Visual Studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\LinqToSql\LinqToSql\bin\Debug\LinqToSql.exe.config

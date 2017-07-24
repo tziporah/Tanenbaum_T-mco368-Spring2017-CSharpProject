@@ -1,0 +1,6 @@
+c:\users\sara bracha\documents\visual studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\bin\Debug\ConsoleApplicationDBClasses.exe.config
+c:\users\sara bracha\documents\visual studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\bin\Debug\ConsoleApplicationDBClasses.exe
+c:\users\sara bracha\documents\visual studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\bin\Debug\ConsoleApplicationDBClasses.pdb
+c:\users\sara bracha\documents\visual studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\obj\Debug\ConsoleApplicationDBClasses.exe
+c:\users\sara bracha\documents\visual studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\obj\Debug\ConsoleApplicationDBClasses.pdb
+C:\Users\Sara Bracha\Documents\Visual Studio 2015\Projects\TziporahStore\ConsoleApplicationDBClasses\obj\Debug\ConsoleApplicationDBClasses.csprojResolveAssemblyReference.cache
