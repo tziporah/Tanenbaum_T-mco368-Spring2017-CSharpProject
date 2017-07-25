@@ -13,6 +13,7 @@ namespace TziporahStore
 {
     public partial class LoginForm : Form
     {
+        public static string username;
         public LoginForm()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace TziporahStore
         {
             using (LinqToSqlDataContext context = new LinqToSqlDataContext())
             {
-                var username = usernameTextBox.Text;
+                username = usernameTextBox.Text;
 
                 var password = context.Customers.Where(a => a.username == username)
                     .Select(a => a.aPassword).FirstOrDefault();

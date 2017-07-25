@@ -40,7 +40,7 @@
       <Column Name="custID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="itemNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="purchaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="purchaseDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="price" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
       <Association Name="Customer_Purchase" Member="Customer" ThisKey="custID" OtherKey="userID" Type="Customer" IsForeignKey="true" />
       <Association Name="Item_Purchase" Member="Item" ThisKey="itemNo" OtherKey="itemID" Type="Item" IsForeignKey="true" />

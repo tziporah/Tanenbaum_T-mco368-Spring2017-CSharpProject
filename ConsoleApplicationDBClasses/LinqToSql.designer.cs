@@ -913,7 +913,7 @@ namespace ConsoleApplicationDBClasses
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_purchaseDate", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_purchaseDate", DbType="DateTime NOT NULL")]
 		public System.DateTime purchaseDate
 		{
 			get

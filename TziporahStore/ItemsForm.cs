@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,7 +44,37 @@ namespace TziporahStore
 
         private void purchaseItem(int item, decimal qty)
         {
-            
+
+            /*
+            using (LinqToSqlDataContext context = new LinqToSqlDataContext())
+            {
+                var custID = context.Customers.Where(c => c.username == LoginForm.username)
+                    .Select(c => c.userID);
+                var price = context.Items.Where(i => i.itemID == item).Select(i => i.price);
+                var PurchaseDate = DateTime.Now.ToShortDateString();
+                string sql = $"INSERT INTO PURCHASE VALUES({custID},{item},{qty},{PurchaseDate}," +
+                             $"{price})";
+                ConsoleApplicationDBClasses.SingletonConnection.Instance.GetReader(sql);
+               
+            }
+            */
+            try
+            {
+                string sql = "declare @userid int;"
+                             + $"declare @price decimal(4,2);"
+                             + $"select @userid = userID from Customer where username = '{LoginForm.username}'"
+                             + $"select @price = price from Item where itemNo == item"
+                             +
+                             $"INSERT INTO PURCHASE(custID, itemNo, quantity, purchaseDate, price)" +
+                             $" VALUES(@userid, {item}, {qty}, GETDATE(), @price)";
+                ConsoleApplicationDBClasses.SingletonConnection.Instance.GetReader(sql);
+            }
+            catch (Exception e)
+            {
+                Label errorLabel = new Label();
+                errorLabel.Text = "Unable to process transaction.";
+            }
+
         }
     }
 }
