@@ -21,15 +21,15 @@ namespace TziporahStore
 
         private void ItemsForm_Load(object sender, EventArgs e)
         {
-            this.itemTableAdapter.Fill(this.tziporahStoreDataSet.Item);
+            this.itemTableAdapter.Fill(this.tziporahStoreDataSet1.Item);
             using (LinqToSqlDataContext context = new LinqToSqlDataContext())
             {
-                for (int i = 0; i <= context.Items.Count(); i++)
+                for (int i = 10; i <= context.Items.Count() + 9; i++)
                 {
                     Button item = (Button)Controls.Find("button" + i, true).FirstOrDefault();
                     if (item != null)
                     {
-                        var prod = context.Items.Where(it => it.itemID == i).First();
+                        var prod = context.Items.Where(it => it.itemID == i - 9).First();
                         item.Text = $"Purchase {prod.descript}";
 
                     }
@@ -74,6 +74,21 @@ namespace TziporahStore
                 Label errorLabel = new Label();
                 errorLabel.Text = "Unable to process transaction.";
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            purchaseItem(2, qty2.Value);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
 
         }
     }

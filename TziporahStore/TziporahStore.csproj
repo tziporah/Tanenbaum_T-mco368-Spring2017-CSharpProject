@@ -47,23 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ItemsForm.cs">
+    <Compile Include="ItemList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemsForm.Designer.cs">
-      <DependentUpon>ItemsForm.cs</DependentUpon>
+    <Compile Include="ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemsForSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemsForSale.Designer.cs">
-      <DependentUpon>ItemsForSale.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,19 +66,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TziporahStoreDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TziporahStoreDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TziporahStoreDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_DBModel_ContextDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_DBModel_ContextDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ItemsForm.resx">
-      <DependentUpon>ItemsForm.cs</DependentUpon>
+    <EmbeddedResource Include="ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemsForSale.resx">
-      <DependentUpon>ItemsForSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +110,17 @@
     </None>
     <None Include="TziporahStoreDataSet.xss">
       <DependentUpon>TziporahStoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TziporahStoreDataSet1.xsc">
+      <DependentUpon>TziporahStoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TziporahStoreDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TziporahStoreDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TziporahStoreDataSet1.xss">
+      <DependentUpon>TziporahStoreDataSet1.xsd</DependentUpon>
     </None>
     <None Include="_DBModel_ContextDataSet.xsc">
       <DependentUpon>_DBModel_ContextDataSet.xsd</DependentUpon>

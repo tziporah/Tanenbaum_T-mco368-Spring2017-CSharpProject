@@ -78,10 +78,9 @@ create table Purchase
 	custID int not null,
 	itemNo int not null,
 	quantity int not null,
-	purchaseDate date not null,
+	purchaseDate datetime not null,
 	price decimal(6,2) not null,
 	constraint [PK_purchaseID] primary key(purchaseID),
 	constraint [FK_custID] foreign key (custID) references Customer(userID),
 	constraint [FK_itemNo] foreign key (itemNo) references Item(itemID)
 )
-

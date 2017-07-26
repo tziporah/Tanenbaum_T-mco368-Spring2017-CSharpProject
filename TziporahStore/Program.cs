@@ -10,7 +10,7 @@ namespace TziporahStore
 {
     static class Program
     {
-        public static ItemsForm Items { get; set; }
+        public static ItemList Items { get; set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -21,7 +21,7 @@ namespace TziporahStore
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
 
-            Items = new ItemsForm();
+            Items = new ItemList();
 
                     Application.Run(new LoginForm());
 
