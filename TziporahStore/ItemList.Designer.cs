@@ -59,6 +59,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.accountButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tziporahStoreDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tziporahStoreDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -416,11 +417,22 @@
             this.errorLabel.Text = "ERROR PROCESSING YOUR REQUEST";
             this.errorLabel.Visible = false;
             // 
+            // accountButton
+            // 
+            this.accountButton.Location = new System.Drawing.Point(13, 308);
+            this.accountButton.Name = "accountButton";
+            this.accountButton.Size = new System.Drawing.Size(75, 23);
+            this.accountButton.TabIndex = 28;
+            this.accountButton.Text = "My Account";
+            this.accountButton.UseVisualStyleBackColor = true;
+            this.accountButton.Click += new System.EventHandler(this.accountButton_Click);
+            // 
             // ItemList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 344);
+            this.ClientSize = new System.Drawing.Size(430, 343);
+            this.Controls.Add(this.accountButton);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -499,5 +511,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Button accountButton;
     }
 }

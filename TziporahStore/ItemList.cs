@@ -116,5 +116,10 @@ namespace TziporahStore
         {
             purchaseItem(9, numericUpDown9.Value);
         }
+
+        private void accountButton_Click(object sender, EventArgs e)
+        {
+            Program.Account.Show();
+        }
     }
 }
