@@ -18,39 +18,35 @@ namespace TziporahStore
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void dateButton_Click(object sender, EventArgs e)
         {
+            using (LinqToSqlDataContext context = new LinqToSqlDataContext())
+            {
+                label1.Visible = true;
+                label1.Text = "PurchaseID     CustomerID ItemNo     Quantity PurchaseDate               Price";
+        var all = context.Purchases.Where(p => p.Customer.username == LoginForm.username)
+                    .Where(p => p.purchaseDate >= beginDate.Value && p.purchaseDate <= endDate.Value)
+                    .ToList();
+                if (!all.Any())
+                {
+                    label1.Text = "No Purchase History";
+                }
+                else
+                {
+                    foreach (Purchase a in all)
+                    {
+                        label1.Text += "\n" + a.purchaseID + "                    " + a.custID
+                                       + "                    " + a.itemNo +
+                                       "                    " + a.quantity + "     " + a.purchaseDate + "     " + a.price;
+                    }
+                }
 
+            }
         }
 
         private void allButton_Click(object sender, EventArgs e)
         {
-            /*
-            string sql = $"SELECT * FROM PURCHASE WHERE custID = (SELECT userID FROM CUSTOMER WHERE username" +
-                         $"= '{LoginForm.username}')";
-            var rs = ConsoleApplicationDBClasses.SingletonConnection.Instance.GetReader(sql);
            
-            while (rs.Read())
-            {
-                try
-                {
-                    if (rs.GetString(0) == null)
-                    {
-                        label1.Text = "No Purchase History";
-                    }
-                    label1.Text += "\n" +  rs.GetString(0) + "\t " + rs.GetString(1) + "\t " + rs.GetString(2) + "\t "
-                                   + rs.GetString(3);
-                        label1.Visible = true;
-                }
-                catch (Exception ex)
-                {
-                    label1.Text = ex.Message;
-                    label1.Visible = true;
-                }
-
-            }
-            label1.Visible = true;
-            */
             //fill label1 with results of query to get all purchases
             using (LinqToSqlDataContext context = new LinqToSqlDataContext())
             {
@@ -81,6 +77,32 @@ namespace TziporahStore
         private void PurchasesForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void priceButton_Click(object sender, EventArgs e)
+        {
+            using (LinqToSqlDataContext context = new LinqToSqlDataContext())
+            {
+                label1.Visible = true;
+                label1.Text = "PurchaseID     CustomerID ItemNo     Quantity PurchaseDate               Price";
+                var all = context.Purchases.Where(p => p.Customer.username == LoginForm.username)
+                    .Where(p => p.price >= minPrice.Value && p.price <= maxPrice.Value)
+                    .ToList();
+                if (!all.Any())
+                {
+                    label1.Text = "No Purchase History";
+                }
+                else
+                {
+                    foreach (Purchase a in all)
+                    {
+                        label1.Text += "\n" + a.purchaseID + "                    " + a.custID
+                                       + "                    " + a.itemNo +
+                                       "                    " + a.quantity + "     " + a.purchaseDate + "     " + a.price;
+                    }
+                }
+
+            }
         }
     }
 }
