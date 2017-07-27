@@ -12,6 +12,7 @@ namespace TziporahStore
     {
         public static ItemList Items { get; set; }
         public static AccountForm Account { get; set; }
+        public static PurchasesForm Purchases { get; set;}
 
         /// <summary>
         /// The main entry point for the application.
@@ -24,6 +25,7 @@ namespace TziporahStore
 
             Items = new ItemList();
             Account = new AccountForm();
+            Purchases = new PurchasesForm();
 
                     Application.Run(new LoginForm());
 

@@ -34,6 +34,7 @@
             this.enterAmountLabel = new System.Windows.Forms.Label();
             this.updateAccountButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.viewPurchasesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,22 @@
             this.errorLabel.Text = "There was an error processing your request.";
             this.errorLabel.Visible = false;
             // 
+            // viewPurchasesButton
+            // 
+            this.viewPurchasesButton.Location = new System.Drawing.Point(83, 236);
+            this.viewPurchasesButton.Name = "viewPurchasesButton";
+            this.viewPurchasesButton.Size = new System.Drawing.Size(118, 23);
+            this.viewPurchasesButton.TabIndex = 6;
+            this.viewPurchasesButton.Text = "View Purchases";
+            this.viewPurchasesButton.UseVisualStyleBackColor = true;
+            this.viewPurchasesButton.Click += new System.EventHandler(this.viewPurchasesButton_Click);
+            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 239);
+            this.ClientSize = new System.Drawing.Size(284, 271);
+            this.Controls.Add(this.viewPurchasesButton);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.updateAccountButton);
             this.Controls.Add(this.enterAmountLabel);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Label enterAmountLabel;
         private System.Windows.Forms.Button updateAccountButton;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Button viewPurchasesButton;
     }
 }

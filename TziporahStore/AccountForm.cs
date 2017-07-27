@@ -62,5 +62,11 @@ namespace TziporahStore
                 errorLabel.Visible = true;
             }
         }
+
+        private void viewPurchasesButton_Click(object sender, EventArgs e)
+        {
+            Program.Purchases.Show();
+            this.Hide();
+        }
     }
 }
